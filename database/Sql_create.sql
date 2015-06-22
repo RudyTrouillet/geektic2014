@@ -9,7 +9,8 @@ nom varchar(40),
 prenom varchar(40),
 mail varchar(40),
 gravatar varchar(100),
-sexe varchar(1)
+sexe varchar(1),
+compteur_passage smallint
 );
           
 create table interest (
