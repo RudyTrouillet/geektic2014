@@ -1,0 +1,37 @@
+drop table geek;
+drop table interet;
+drop table geekInteret;
+
+
+create table geek (
+id_geek decimal(4),
+nom varchar(40),
+prenom varchar(40),
+mail varchar(40),
+gravatar varchar(100),
+sexe varchar(1),
+constraint pk_geek primary key (id)
+);
+          
+create table interet (
+id_interest decimal(4),
+libelle varchar(40),
+description varchar(100),
+constraint pk_geek primary key (id)
+);
+
+
+create table geekinteret (
+id_geek decimal(4),
+id_interet decimal(4),
+constraint pk_geekinteret primary key (id_geek, id_interet)
+);
+
+alter table geek
+add constraint pk_sexe CHECK (sexe='H' or sexe='F');
+
+alter table geekinteret
+        add constraint fk_geek_geekinteret foreign key (id_geek) references geek (id);
+        
+alter table geekinteret
+        add constraint fk_interet_geekinteret foreign key (id_interet) references interet (id);
