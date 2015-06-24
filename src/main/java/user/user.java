@@ -7,7 +7,7 @@ import javax.persistence.*;
 @SequenceGenerator(name="USER_SEQ", sequenceName="user_seq")
 public class user {
 
-    @ManyToMany
+   
     @JoinTable(name = "GEEKTIC",
             joinColumns = @JoinColumn(name = "id_user"),
             inverseJoinColumns = @JoinColumn(name = "id_interest"))
